@@ -1,4 +1,4 @@
-package com.sample.hub;
+package com.sample.logger;
 
 public class SamplePojo {
 

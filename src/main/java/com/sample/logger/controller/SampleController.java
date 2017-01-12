@@ -1,4 +1,4 @@
-package com.sample.hub.controller;
+package com.sample.logger.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sample.hub.SamplePojo;
+import com.sample.logger.SamplePojo;
 
 @RestController
 @RequestMapping("/hi")
