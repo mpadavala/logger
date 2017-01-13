@@ -5,6 +5,8 @@ import java.util.logging.Logger;
 import com.sample.logger.requestid.RequestIdGenerator;
 
 public class MyLogger {
+	
+	private static final String REQUEST_ID = "requestid";
 
     private Logger logger;
 
@@ -17,21 +19,21 @@ public class MyLogger {
     }
     
     public void info(String str){
-    	logger.info(RequestIdGenerator.getRequestId() + " : " + str);
+    	logger.info(REQUEST_ID + ": " + RequestIdGenerator.getRequestId() + " : " + str);
     }
     
     public void info(Object str){
-    	logger.info(RequestIdGenerator.getRequestId() + " : " + str.toString());
+    	logger.info(REQUEST_ID + ": " + RequestIdGenerator.getRequestId() + " : " + str.toString());
     }
      
     //TO CHANGE THE METHODS PROPERLY
     
     public void debug(String str){
-    	this.info(RequestIdGenerator.getRequestId() + " : " + str);
+    	this.info(REQUEST_ID + ": " + RequestIdGenerator.getRequestId() + " : " + str);
     }
     
     public void error(String str){
-    	logger.info(RequestIdGenerator.getRequestId() + " : " + str);
+    	logger.info(REQUEST_ID + ": " + RequestIdGenerator.getRequestId() + " : " + str);
     }
     
 }
