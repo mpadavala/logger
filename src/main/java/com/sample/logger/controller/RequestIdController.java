@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sample.logger.MyCallableTask;
+import com.sample.helper.MyCallableTask;
+import com.sample.helper.MyRunnableTask;
 import com.sample.logger.MyLogger;
-import com.sample.logger.MyRunnableTask;
 
 @RestController
 public class RequestIdController {

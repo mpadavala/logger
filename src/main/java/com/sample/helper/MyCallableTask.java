@@ -1,7 +1,8 @@
-package com.sample.logger;
+package com.sample.helper;
 
 import java.util.concurrent.Callable;
 
+import com.sample.logger.MyLogger;
 import com.sample.logger.requestid.RequestIdGenerator;
 
 public class MyCallableTask implements Callable<String>{

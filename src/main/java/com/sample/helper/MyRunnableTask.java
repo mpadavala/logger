@@ -1,4 +1,6 @@
-package com.sample.logger;
+package com.sample.helper;
+
+import com.sample.logger.MyLogger;
 
 public class MyRunnableTask implements Runnable {
 
