@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sample.logger.SamplePojo;
+import com.sample.logger.pojo.SamplePojo;
 
 @RestController
 @RequestMapping("/hi")

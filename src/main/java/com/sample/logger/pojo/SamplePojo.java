@@ -1,4 +1,4 @@
-package com.sample.logger;
+package com.sample.logger.pojo;
 
 public class SamplePojo {
 
