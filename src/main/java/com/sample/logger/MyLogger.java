@@ -1,6 +1,8 @@
 package com.sample.logger;
 
-import java.util.logging.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.sample.logger.requestid.RequestIdGenerator;
 
@@ -10,12 +12,11 @@ public class MyLogger {
 
     private Logger logger;
 
-    public MyLogger(String name) {
-        this.logger = Logger.getLogger(name);
-    }
+   
     
-    public MyLogger(Class clazz) {
-        this(clazz.getName());
+    @SuppressWarnings("rawtypes")
+	public MyLogger(Class clazz) {
+        this.logger = LoggerFactory.getLogger(clazz.getName());
     }
     
     public void info(String str){
@@ -25,8 +26,6 @@ public class MyLogger {
     public void info(Object str){
     	logger.info(REQUEST_ID + ": " + RequestIdGenerator.getRequestId() + " : " + str.toString());
     }
-     
-    //TO CHANGE THE METHODS PROPERLY
     
     public void debug(String str){
     	this.info(REQUEST_ID + ": " + RequestIdGenerator.getRequestId() + " : " + str);

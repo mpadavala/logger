@@ -4,7 +4,7 @@
 
 <web-app>
   
-	<display-name>Hub Application</display-name>
+	<display-name>Logger</display-name>
 	
 	<listener>
 		<listener-class>com.sample.logger.listener.RequestListener</listener-class>

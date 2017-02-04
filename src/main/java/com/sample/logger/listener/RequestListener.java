@@ -9,7 +9,7 @@ import com.sample.logger.requestid.RequestIdGenerator;
 
 public class RequestListener implements ServletRequestListener { 
 
-	private static MyLogger logger = new MyLogger(RequestListener.class.getName());
+	private static MyLogger logger = new MyLogger(RequestListener.class);
 	
 	
 	@Override

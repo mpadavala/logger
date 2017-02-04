@@ -19,40 +19,40 @@ import com.sample.logger.MyLogger;
 public class RequestIdController {
 	
 	private MyLogger logger = new MyLogger(RequestIdController.class);
-			
+	private ExecutorService executor = Executors.newFixedThreadPool(5);
+		
 	@RequestMapping(value="/requestid", method = RequestMethod.GET)
 	public String requestId() {
 		
-		ExecutorService executor = Executors.newFixedThreadPool(5);
-		 
-		logger.info("in requestid controller");
+		logger.info("in RequestId controller");
 		
 		List<Future<String>> furturesList = new ArrayList<Future<String>>();
-		
-		for(int i=0; i<3; i++){
+	
+		for(int i=0; i<10; i++){
 			MyCallableTask task = new MyCallableTask();
 			furturesList.add(executor.submit(task));
+			logger.info("submitted callable task :  " + task.toString());
 		}
-		logger.info("submitted all future tasks (callables)");
+		logger.info("submitted all callable tasks ");
+		
 		
 		for(int i=0; i<4; i++){
-			MyRunnableTask thread = new MyRunnableTask();
-			executor.execute(thread);
+			MyRunnableTask runnable = new MyRunnableTask();
+			executor.execute(runnable);
+			logger.info("submitted runnbale task :  " + runnable.toString());
 		}
 		
 		
-		logger.info("submitted all Runnable tasks (Runnbales)");
+		logger.info("submitted all runnable tasks");
 		
-		logger.info("Started to fetch callable task return values");
+		logger.info("Started fetching callable task return values");
 		
 		for(Future<String> future : furturesList){
 			try {
 				logger.info(future.get());
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (ExecutionException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
